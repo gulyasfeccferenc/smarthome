@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap"
+@import "assets/palette"
+
+body
+  background-color: $color4
+
+  .temperature-box
+    background-size: 100%
+    background-repeat: no-repeat
+    background: rgba(0,0,0,.2)
+    color: white
+    text-shadow: 1px 1px 10px white
+
+    &.clear,
+    &.clear-day
+      background-image: url("assets/clear.jpg")
+
+    &.clear-night
+      background-image: url("assets/clear_night.png")
+
+    &.partly-cloudy-day,
+    &.wind,
+    &.fog,
+    &.cloudy
+      background-image: url('assets/cloudy.jpg')
+
+    &.partly-cloudy-night
+      background-image: url('assets/cloudy_night.png')
+
+    &.rain
+      background-image: url('assets/rainy.gif')
+
+    &.sleet,
+    &.snow
+      background-image: url('assets/snow.png')
