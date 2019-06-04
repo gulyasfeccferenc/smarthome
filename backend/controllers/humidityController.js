@@ -1,9 +1,8 @@
-const Temperature = require('../models/tempdata.model');
 const db = require('../db');
 
 module.exports = {
-  getTempData: (req, res) => {
-    db.query("Select * from temp_data", function (err, result) {
+  getHumidityData: (req, res) => {
+    db.query("Select * from hum_data", function (err, result) {
       if(err) {
         console.log("error: ", err);
         res.status(404).json({
@@ -18,8 +17,8 @@ module.exports = {
       }
     });
   },
-  getLastTempData: (req, res) => {
-    db.query("Select * from temp_data ORDER BY id DESC LIMIT 1", function (err, result) {
+  getLastHumidityData: (req, res) => {
+    db.query("Select * from hum_data ORDER BY id DESC LIMIT 1", function (err, result) {
       if(err) {
         console.log("error: ", err);
         res.status(404).json({
@@ -34,8 +33,8 @@ module.exports = {
       }
     });
   },
-  getLast10TempData: (req, res) => {
-    db.query("Select * from temp_data ORDER BY id DESC LIMIT 10", function (err, result) {
+  getLast10HumidityData: (req, res) => {
+    db.query("Select * from hum_data ORDER BY id DESC LIMIT 10", function (err, result) {
       if(err) {
         console.log("error: ", err);
         res.status(404).json({

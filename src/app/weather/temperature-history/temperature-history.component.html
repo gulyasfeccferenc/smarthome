@@ -1,0 +1,7 @@
+<div class="temperature-box col-lg-12">
+  <div class="text-center">
+    <p *ngFor="let curr of tempHistory">
+      {{ curr.createdAt | mysqlDatePipe |date: 'yyyy.MM.dd HH:mm:ss' }}: <strong>{{curr.temperature}}°C</strong>
+    </p>
+  </div>
+</div>
